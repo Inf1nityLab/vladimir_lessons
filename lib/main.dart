@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vladimir_timur_lessons/lesson02/screens/login_screen.dart';
 import 'package:vladimir_timur_lessons/lessons01/lesson01_screen.dart';
 
 
@@ -14,11 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Lesson01Screen(),
+      home: const LoginScreen(),
     );
   }
 }
