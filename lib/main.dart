@@ -1,28 +1,36 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:vladimir_timur_lessons/lesson02/screens/detail_screen.dart';
-import 'package:vladimir_timur_lessons/lesson02/screens/login_screen.dart';
-import 'package:vladimir_timur_lessons/lesson02/screens/main_screen.dart';
-import 'package:vladimir_timur_lessons/lesson03_function/lesson03_function.dart';
-import 'package:vladimir_timur_lessons/lessons01/lesson01_screen.dart';
+import 'package:vladimir_timur_lessons/lesson04/lesson04.dart';
+import 'package:vladimir_timur_lessons/lesson04/login_screen.dart';
+
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => const MyApp(), // Wrap your app
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Lesson03Function(),
+      darkTheme: ThemeData.dark(),
+      home: const LoginScreen04(),
     );
   }
 }
