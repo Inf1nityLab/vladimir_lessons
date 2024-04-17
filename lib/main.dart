@@ -3,6 +3,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:vladimir_timur_lessons/lesson04/lesson04.dart';
 import 'package:vladimir_timur_lessons/lesson04/login_screen.dart';
+import 'package:vladimir_timur_lessons/lesson05/lesson05.dart';
+import 'package:vladimir_timur_lessons/lesson05/task_app.dart';
 
 
 void main() {
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       darkTheme: ThemeData.dark(),
-      home: const LoginScreen04(),
+      home: const TaskApp(),
     );
   }
 }
